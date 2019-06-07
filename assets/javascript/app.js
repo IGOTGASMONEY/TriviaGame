@@ -15,58 +15,64 @@
 //countdown fuction 
 
 
-Var startBtn =  document.getElementById "#start")
+
+var answered;
+var seconds ;
+var time ;
+var answered;
+var unanswered ;
+var correct; 
+var incorrect; 
+var currentQuestion;
+var userSelection;
+var messages = {
+ 
+    Correct: " You GOT IT " , 
+    Incorrect: " STOP NOW ", 
+    Unanswered: " YOU ARE SOOO SLOW " , 
+    Final: " OHHHHH MAAAAAA GOOOOOOODNESSSS"
+}
 
 
+$("#start").on("click" , function (){
+    $(this).hide(); // this will hide the start button when selected 
+    newGame();
+})
 
 
+function () {
 
+    // clear out scoreboard html 
+}
 
+funtion countDown() {
+seconds =15;
+$("#cSeconds").text(seconds);
+answered=true;
+time= setInterval(showCountdown , 1000)
+}
 
-
-
-// var timeLeft = 15; 
-// var timer = setInterval(function() {
-//     document.getElementById("timer-secs").value = 15 - timeLeft;
-//     timeLeft-=1;
-//     if(timeLeft <= 0)
-//     clearInterval(timer);
-// } , 1000)
-
-// function rainbow() {
-//     setTimeout(rainbow , 15000);
-//     createImageBitmap()
-//     document.getElementById("timer").html;
-// }
+function showCountdown() {
+    seconds --; 
+    $("#cSeconds").text(seconds);
+    if (seconds < 1 ){
+        clearInterval(time); 
+        answered = false; 
+    //    call function that gets me to ans page  
+    }
+}
 
 
 setTimeout(()=> {
     console.log("YOU WIN");
 },15000);
 
-// function countdown() {
-//     var milli = 15;
-//     var secs = seconds
-//     function trick() {
-//         var counter= document.getElementById ("cSeconds");
-//         var currentSec = seconds -1;
-//         milli --;
-//         counter.innerHTML=currentSec.toString() + ":" + (milli < 10 ? "0" : "") + String(milli);
-//         if(milli>0) {
-//             setTimeout(trick , 1000);
-//         }else{
-//             if (secs>1){
-//                 countdown(mins-1);
-//             }
-//         }
-//     }
-//    trick(); 
-// }
+
 
 var counter =0;
 var timeleft=15;
-var timer =   select $("#cSeconds");
-cSeconds.html(timeleft-counter);
+var timer =   $("#cSeconds");
+// timer.html(timeleft-counter);
 function timeIt() {
 counter++;
 cSeconds.html(timeleft-counter);
@@ -76,45 +82,10 @@ setInterval(timeit,1000);
 
 
 
-// function timer() {
-//     c = c - 1; 
-//     if (c < 150) {
-//         $("#cSeconds").html = c;
-//     }
-//     if (c < 1) {
-//         clearInterval(c);
-//     }
-// }
-
-// update =  setInterval("timer()" , 1000);
 
 
 
-// //remeber to console log
-// //sets milliseconds
-// var milli = 1000;
-// // This calculates seconds from milliseconds 
-// var secs= 15 * milli; 
-// var currentSeconds = 0;
-// var currentMilli = 0;
-// function countdown() {
 
-//     setTimeout(Decrement() , 15);
-//     // this function will set the alloted time for the timer 1 sec = 1000 milliseconds
-// }
-// // This function is for the decrement
-// function Decrement() {
-
-//     currentSeconds = Math.Floor(secs * 1000);
-//     currentMilli = secs % 1000;
-//     if(currentSeconds <= 999) currentSeconds = "0" + currentSeconds;
-//     secs--;
-//     document.getElementById("timer").html = currentSeconds;
-//     if(secs !== -1) setTimeout(Decrement() , 15);
-
-
-
-// }
 
 
 
