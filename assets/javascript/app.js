@@ -15,6 +15,16 @@
 //countdown fuction 
 
 
+Var startBtn =  document.getElementById "#start")
+
+
+
+
+
+
+
+
+
 // var timeLeft = 15; 
 // var timer = setInterval(function() {
 //     document.getElementById("timer-secs").value = 15 - timeLeft;
@@ -32,10 +42,51 @@
 
 setTimeout(()=> {
     console.log("YOU WIN");
-},15000)
+},15000);
+
+// function countdown() {
+//     var milli = 15;
+//     var secs = seconds
+//     function trick() {
+//         var counter= document.getElementById ("cSeconds");
+//         var currentSec = seconds -1;
+//         milli --;
+//         counter.innerHTML=currentSec.toString() + ":" + (milli < 10 ? "0" : "") + String(milli);
+//         if(milli>0) {
+//             setTimeout(trick , 1000);
+//         }else{
+//             if (secs>1){
+//                 countdown(mins-1);
+//             }
+//         }
+//     }
+//    trick(); 
+// }
+
+var counter =0;
+var timeleft=15;
+var timer =   select $("#cSeconds");
+cSeconds.html(timeleft-counter);
+function timeIt() {
+counter++;
+cSeconds.html(timeleft-counter);
+
+}
+setInterval(timeit,1000);
 
 
 
+// function timer() {
+//     c = c - 1; 
+//     if (c < 150) {
+//         $("#cSeconds").html = c;
+//     }
+//     if (c < 1) {
+//         clearInterval(c);
+//     }
+// }
+
+// update =  setInterval("timer()" , 1000);
 
 
 
