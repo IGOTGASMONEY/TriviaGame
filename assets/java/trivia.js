@@ -34,66 +34,66 @@ console.log(trivia[0].answers[0])
 
 var trivia = [
     {
-        question: "What is the name of Jon Snow’s direwolf?",
+        question: "What type of car did Cole drive?",
         answers: [
-            "Ghost",
-            "Lady",
-            "ShaggyDog",
-            "Nymeria"],
-        correct: "Ghost",
+            "Benz",
+            "Beamer",
+            "Pacer",
+            "Focus"],
+        correct: "Pacer",
 
-        image: "assets/images/Ghost.jpg" // replace picture create image folder 
+        image: "assets/images/martintriv1.jpg" // replace picture create image folder 
     },
     {
-        question: 'Who said “That’s what I do, I drink and I know things."?',
+        question: "'Whoa...whoa...hold up. Don't be threatening us with the physical, because I can get down with the big boys.' Who did Martin say this to?",
         answers: [
-            "Tyrion Lannister",
-            "Aria Stark",
-            "Robert Baratheon",
-            "Jon Snow"],
-        correct: "Tyrion Lannister",
-        image: "assets/images/Tyrion.jpg"
+            "Cole",
+            "Tommy",
+            "Gina",
+            "Bruh Man"],
+        correct: "Tommy",
+        image: "assets/images/martintriv2.gif"
     },
     {
-        question: "Who is the King of Westeros when the series begins?",
+        question: "Martin and Gina are rich. They have won the lottery or so they think. Martin gives gifts to all his friends. What does he give Pam?",
         answers: [
-            "Robert Baratheon",
-            "Ned Stark",
-            "Rob Stark",
-            "Jaime Lannister"],
-        correct: "Robert Baratheon",
-        image: "assets/images/robert.jpg"
+            "A $2000.00 wax job.",
+            "A $2000.00 plastic surgery job.",
+            "A $2000.00 pedicure.",
+            "A $2000.00 hair doo."],
+        correct: "A $2000.00 wax job.",
+        image: "assets/images/martintriv3.gif"
     },
     {
-        question: "What are the words of the House of Stark",
+        question: " What did Gina lose and had to work for Shenehneh to get replacements?",
         answers: [
-            "Winter is coming",
-            "First in Battle",
-            "Growing Strong",
-            "Ours is the Fury"],
-        correct: "Winter is coming",
-        image: "assets/images/winter.gif"
+            "Whitney Houston tickets",
+            "Movie tickets",
+            "Pistons tickets",
+            "LL Cool J tickets"],
+        correct: "Pistons tickets",
+        image: "assets/images/martintriv4.gif"
     },
     {
-        question: "Who is the eldest stark child?",
+        question: "Martin had a crush on a school teacher when he was younger. What was the name of the teacher?",
         answers: [
-            "Robb Stark",
-            "Jon Snow",
-            "Sanza Stark",
-            "Bran Stark"],
-        correct: "Robb Stark",
-        image: "assets/images/rob.jpg"
+            "Ms. Frizzle",
+            "Ms. Trinidad",
+            "Ms. Hollingsworth",
+            "Ms. Green"],
+        correct: "Ms. Trinidad",
+        image: "assets/images/martintriv4.gif"
     },
     {
-        question: "Which of the following is NOT one of Daenarys' Dragons?",
+        question: "Martin, Gina, Tommy, Cole and Pam had won a four wheel drive SUV. They decided to share the truck and each person would have use of it on a certain day. Who had use of it on Wednesday, which is considered hump day?",
         answers: [
-            "Drogon",
-            "Rhaegal",
-            "Viserion",
-            "Daarion"
+            "Gina",
+            "Tommy",
+            "Cole",
+            "Pam"
         ],
-        correct: "Daarion",
-        image: "assets/images/dragons.gif"
+        correct: "Pam",
+        image: "assets/images/martintriv6.gif"
     }
 ]
 
