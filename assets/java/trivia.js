@@ -9,13 +9,61 @@
 
 
 // Funstions to think about 
-renQuest // ( random question to be generated along with random answer)
+//renQuest // ( random question to be generated along with random answer)
 // variables for question and answers .
 // timer fuction 
 //countdown fuction 
 
-//remeber to console log 
 
+// var timeLeft = 15; 
+// var timer = setInterval(function() {
+//     document.getElementById("timer-secs").value = 15 - timeLeft;
+//     timeLeft-=1;
+//     if(timeLeft <= 0)
+//     clearInterval(timer);
+// } , 1000)
+
+// function rainbow() {
+//     setTimeout(rainbow , 15000);
+//     createImageBitmap()
+//     document.getElementById("timer").html;
+// }
+
+
+setTimeout(()=> {
+    console.log("YOU WIN");
+},15000)
+
+
+
+
+
+
+// //remeber to console log
+// //sets milliseconds
+// var milli = 1000;
+// // This calculates seconds from milliseconds 
+// var secs= 15 * milli; 
+// var currentSeconds = 0;
+// var currentMilli = 0;
+// function countdown() {
+
+//     setTimeout(Decrement() , 15);
+//     // this function will set the alloted time for the timer 1 sec = 1000 milliseconds
+// }
+// // This function is for the decrement
+// function Decrement() {
+
+//     currentSeconds = Math.Floor(secs * 1000);
+//     currentMilli = secs % 1000;
+//     if(currentSeconds <= 999) currentSeconds = "0" + currentSeconds;
+//     secs--;
+//     document.getElementById("timer").html = currentSeconds;
+//     if(secs !== -1) setTimeout(Decrement() , 15);
+
+
+
+// }
 
 
 
@@ -30,7 +78,9 @@ renQuest // ( random question to be generated along with random answer)
 
 // On the final screen, show the number of correct answers, incorrect answers, and an option to restart the game (without reloading the page).
 
-console.log(trivia[0].answers[0])
+// console.log(trivia[0].answers[0])
+
+// This array contains the questions and answers along with  the specific image displayed on the win or lose screen 
 
 var trivia = [
     {
