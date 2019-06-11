@@ -101,10 +101,10 @@ var questImages;
 var answersQuest;
 var seconds;
 var time;
-var answered;
-var unanswered;
-var correct;
-var incorrect;
+var answered = 0;
+var unanswered = 0;
+var correct=0;
+var incorrect=0;
 var currentQuestion = 0;
 var userSelection;
 var messages = {
@@ -123,8 +123,13 @@ $("#startBtn").on("click", function () {
 });
 
 
-$(".animalList").on('click',trivia[currentQuestion].answers );
-console.log("click")
+$(".answerList").on('click',function() {
+    $(this).hide();
+    onclick =rendQuest();
+    
+    console.log("clicked");
+} );
+
 
 function rendQuest() {
     countDown();
@@ -148,7 +153,7 @@ function rendQuest() {
     }
     
 
-    answersQuest = trivia.answers;
+    // answersQuest = trivia.answers;
 
 
 
@@ -163,6 +168,7 @@ $(".answerList").on("click", function () {
         messages.correct;
         trivia[currentQuestion].image;
         correctAns++;
+        // console.log(correctcorrect)
         // $("#correctAnswers")+
         // correctAns().show;
         // wrongAns().hide;
@@ -172,6 +178,7 @@ $(".answerList").on("click", function () {
         messages.Incorrect;
         trivia[currentQuestion].image;
         incorrect++;
+        // console.log(wrongwrong);
         // $("#incorrectAnswers") ++;
         // wrongAns().show;
         // correctAns().hide;
@@ -180,20 +187,25 @@ $(".answerList").on("click", function () {
     }else if (userSelection !== "") {
         messages.Unanswered;
         trivia[currentQuestion].image;
-        unanswered ++ ; 
+        unanswered ++ ;
         // noAns().show;
         // correctAns().hide;
         // wrongAns().hide;
-        console.log(userSelection);
+        // console.log(Answer);
 
+        renderQuestpage();
     }
 
 });
 
 
+
+
 function renderQuestpage() {
  
-    for (var i = 0; i < trivia.length; i++) {
+    for (var i = 0; i < trivia[currentQuestion].question.length; i++) {
+        
+        trivia[currentQuestion].question[i];
         // currentQuestion = trivia[currentQuestion].question;
         // $("#currentQuestion").text;
 
