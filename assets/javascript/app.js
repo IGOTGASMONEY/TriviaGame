@@ -39,10 +39,26 @@ $("#start").on("click" , function (){
     newGame();
 })
 
+function renderQuestpage() {
+    for (var i = 0; i < trivia.length; i++)
 
-function () {
 
-    // clear out scoreboard html 
+
+}
+
+function newGame() {
+    $("#finalMessage").empty;
+    $("#correctAnswers").empty;
+    $("#incorrectAnswers").empty;
+    $("#unanswered").empty;
+    answered = 0 ; 
+    unanswered = 0; 
+    currentQuestion = 0;
+    correct =0; 
+    incorrect = 0; 
+    renderQuest();
+    
+    // clear out scorboard html 
 }
 
 funtion countDown() {
