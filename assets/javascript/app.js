@@ -125,6 +125,7 @@ $("#startBtn").on("click", function () {
 function rendQuest() {
     countDown();
     showCountdown();
+    renderQuestpage();
     
 
     $("#currentQuestion").text(trivia[currentQuestion].question);
@@ -160,21 +161,26 @@ $("#answerList").on("click", function () {
         correct = trivia.image;
         correct++;
         // $("#correctAnswers")+
-        correct();
+        correct().show;
+        wrongAns().hide;
+        noAns().hide;
 
     } else if (userSelection !== trivia.correct) {
         messages = messages.Incorrect;
         incorrect = trivia.image;
         incorrect++;
         $("#incorrectAnswers") ++;
-        wrongAns();
+        wrongAns().show;
+        correct().hide;
+        noAns().show;
 
     }else if (userSelection !== "") {
         messages = messages.Unanswered;
         unanswered = trivia[currentQuestion].image;
         unanswered ++ ; 
-        noAns();
-
+        noAns().show;
+        correct().hide;
+        wrongAns().hide;
 
     }
 
@@ -182,9 +188,10 @@ $("#answerList").on("click", function () {
 
 
 function renderQuestpage() {
-    countDown();
-    showCountdown();
+ 
     for (var i = 0; i < trivia.length; i++) {
+        // currentQuestion = trivia[currentQuestion].question;
+        // $("#currentQuestion").text;
 
 	};
 
