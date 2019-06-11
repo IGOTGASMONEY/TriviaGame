@@ -97,7 +97,7 @@ var trivia = [{
 
 
 var ansButton= trivia.answers;
-var questImage;
+var questImages;
 var answersQuest;
 var seconds;
 var time;
@@ -120,7 +120,11 @@ $("#startBtn").on("click", function () {
     $(this).hide(); // this will hide the start button when selected 
     newGame();
     console.log("hello");
-})
+});
+
+
+$(".animalList").on('click',trivia[currentQuestion].answers );
+console.log("click")
 
 function rendQuest() {
     countDown();
@@ -133,17 +137,16 @@ function rendQuest() {
          var button= $('<button>');
         //  button.addclass("answerList");
         //  button.attr("data-name", trivia[currentQuestion].answers);
-        //  button.text(trivia[currentQuestion].answers);
-         $(".answerList").append(trivia[currentQuestion].answers);
+         button.text(trivia[currentQuestion].answers[i]);
+         $(".answerList").append(button);
         // //  var btext=document.createTextNode(trivia[currentQuestion].answers);
-        //  button.on('click',trivia[currentQuestion].answers );
         // //  ansButton.addClass ("btn-answer")
         // //  ansButton.attr()
         // $(".answerList").text(trivia[currentQuestion].answers);
         // $(".answerList").append(trivia[currentQuestion].answers);
         // // make it so its radio buttons . append  created buttons 
     }
-
+    
 
     answersQuest = trivia.answers;
 
@@ -154,33 +157,34 @@ function rendQuest() {
 
 
 }
-$("#answerList").on("click", function () {
+$(".answerList").on("click", function () {
 
-    if (userSelection === trivia.correct) {
-        messages = messages.correct;
-        correct = trivia.image;
-        correct++;
+    if (userSelection === trivia[currentQuestion].correct) {
+        messages.correct;
+        trivia[currentQuestion].image;
+        correctAns++;
         // $("#correctAnswers")+
-        correct().show;
-        wrongAns().hide;
-        noAns().hide;
+        // correctAns().show;
+        // wrongAns().hide;
+        // noAns().hide;
 
-    } else if (userSelection !== trivia.correct) {
-        messages = messages.Incorrect;
-        incorrect = trivia.image;
+    } else if (userSelection !== trivia[currentQuestion].correct) {
+        messages.Incorrect;
+        trivia[currentQuestion].image;
         incorrect++;
-        $("#incorrectAnswers") ++;
-        wrongAns().show;
-        correct().hide;
-        noAns().show;
+        // $("#incorrectAnswers") ++;
+        // wrongAns().show;
+        // correctAns().hide;
+        // noAns().show;
 
     }else if (userSelection !== "") {
-        messages = messages.Unanswered;
-        unanswered = trivia[currentQuestion].image;
+        messages.Unanswered;
+        trivia[currentQuestion].image;
         unanswered ++ ; 
-        noAns().show;
-        correct().hide;
-        wrongAns().hide;
+        // noAns().show;
+        // correctAns().hide;
+        // wrongAns().hide;
+        console.log(userSelection);
 
     }
 
@@ -197,15 +201,15 @@ function renderQuestpage() {
 
 
 }
-function correct() {
+function correctAns() {
     countDown();
     showCountdown();
     correct = $("#correctAnswers");
     corect++;
     var correctMess = messages.Correct;
     $("#correctAnswers").text(correct);
-    trivia[currentQuestion].image;
-}
+    questImages;
+};
 
 function wrongAns() {
     countDown();
@@ -213,20 +217,22 @@ function wrongAns() {
     incorrect=$("#incorrectAnswers");
     incorrect ++;
     $("#incorrectAnswers").text(incorrect);
-    trivia[currentQuestion].image;
+    questImages;
 
-}
+};
 
 function noAns() {
     unanswered = $("#unanswered");
     unanswered++;
     $("#unanswerd").text(unanswered);
     messages = messages.unanswered;
-    questImage = trivia[curretQuestion].image;
+    questImages;
     countDown();
     showCountdown();
 
-}
+};
+
+
 
 function newGame() {
     $("#finalMessage").empty;
@@ -241,14 +247,14 @@ function newGame() {
     rendQuest();
 
     // clear out scorboard html 
-}
+};
 
 function countDown() {
     seconds = 15;
     $("#cSeconds").text(seconds);
     answered = true;
     time = setInterval(showCountdown, 1000)
-}
+};
 
 function showCountdown() {
     seconds--;
@@ -258,7 +264,7 @@ function showCountdown() {
         answered = false;
         //    call function that gets me to ans page  
     }
-}
+};
 
 function final() {
     countDown();
@@ -269,7 +275,7 @@ function final() {
 
 
 
-}
+};
 
 
 setTimeout(() => {
