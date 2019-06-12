@@ -176,14 +176,7 @@ var userSelection= $(this).attr('data-ans'); // relates to info grabbed by click
        
 
     } else if (userSelection !== trivia[currentQuestion].correct) {
-        messages.Incorrect;
-        trivia[currentQuestion].image;
-        incorrect++;
-        console.log('wrongwrong');
-        // $("#incorrectAnswers") ++;
-        // wrongAns().show;
-        // correctAns().hide;
-        // noAns().show;
+        wrongAns();
 
     }else if (userSelection !== "") {
         // messages.Unanswered;
@@ -248,23 +241,52 @@ function correctAns() {
 };
 
 function wrongAns() {
-    countDown();
-    showCountdown();
-    incorrect=$("#incorrectAnswers");
-    incorrect ++;
-    $("#incorrectAnswers").text(incorrect);
-    questImages;
+
+    var wrongMess = messages.Incorrect;
+    var p= $("<p>") ;
+    p.text(messages.Incorrect);
+    $("#message").append(p);
+    var i= $("<img>");
+    i.attr("src" , trivia[currentQuestion].image);
+    $("#gif").append(i);
+    wrongAns++;
+
+
+
+
+
+    // countDown();
+    // showCountdown();
+    // incorrect=$("#incorrectAnswers");
+    // incorrect ++;
+    // $("#incorrectAnswers").text(incorrect);
+    // questImages;
 
 };
 
 function noAns() {
-    unanswered = $("#unanswered");
-    unanswered++;
-    $("#unanswerd").text(unanswered);
-    messages = messages.unanswered;
-    questImages;
-    countDown();
-    showCountdown();
+
+    var correctMess = messages.Unanswered;
+    var p= $("<p>") ;
+    p.text(messages.Unanswered);
+    $("#message").append(p);
+    var i= $("<img>");
+    i.attr("src" , trivia[currentQuestion].image);
+    $("#gif").append(i);
+    noAns++;
+
+
+
+
+
+
+    // unanswered = $("#unanswered");
+    // unanswered++;
+    // $("#unanswerd").text(unanswered);
+    // messages = messages.unanswered;
+    // questImages;
+    // countDown();
+    // showCountdown();
 
 };
 
