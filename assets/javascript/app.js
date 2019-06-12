@@ -15,7 +15,7 @@ var trivia = [{
         ],
         correct: "Pacer",
 
-        image: "assets/images/martintriv1.jpg" // replace picture create image folder 
+        image: "assets/images/martintriv1.gif" // replace picture create image folder 
     },
     {
         question: "'Whoa...whoa...hold up. Don't be threatening us with the physical, because I can get down with the big boys.' Who did Martin say this to?",
@@ -91,6 +91,8 @@ var trivia = [{
 //CSS question . Sizing 
 
 
+// no ans function " when you run out of time "
+
 
 
 
@@ -123,12 +125,12 @@ $("#startBtn").on("click", function () {
 });
 
 
-$(".answerList").on('click',function() {
-    $(this).hide();
-    onclick =rendQuest();
+// $(".answerList").on('click',function() {
+//     $(this).hide();
+//     onclick =rendQuest();
     
-    console.log("clicked");
-} );
+//     console.log("clicked");
+// } );
 
 
 function rendQuest() {
@@ -140,8 +142,8 @@ function rendQuest() {
     $("#currentQuestion").text(trivia[currentQuestion].question);
     for (var i = 0; i < trivia[currentQuestion].answers.length; i++) {
          var button= $('<button>');
-        //  button.addclass("answerList");
-        //  button.attr("data-name", trivia[currentQuestion].answers);
+         button.addClass("ansBTNS");
+         button.attr("data-ans", trivia[currentQuestion].answers[i]);
          button.text(trivia[currentQuestion].answers[i]);
          $(".answerList").append(button);
         // //  var btext=document.createTextNode(trivia[currentQuestion].answers);
@@ -162,40 +164,39 @@ function rendQuest() {
 
 
 }
-$(".answerList").on("click", function () {
+$(".answerList").on("click",".ansBTNS" ,  function () {
+
+    console.log(this);
+    $(".questionPage").hide();
+var userSelection= $(this).attr('data-ans'); // relates to info grabbed by click button created 
 
     if (userSelection === trivia[currentQuestion].correct) {
-        messages.correct;
-        trivia[currentQuestion].image;
-        correctAns++;
-        // console.log(correctcorrect)
-        // $("#correctAnswers")+
-        // correctAns().show;
-        // wrongAns().hide;
-        // noAns().hide;
+        correctAns();
+
+       
 
     } else if (userSelection !== trivia[currentQuestion].correct) {
         messages.Incorrect;
         trivia[currentQuestion].image;
         incorrect++;
-        // console.log(wrongwrong);
+        console.log('wrongwrong');
         // $("#incorrectAnswers") ++;
         // wrongAns().show;
         // correctAns().hide;
         // noAns().show;
 
     }else if (userSelection !== "") {
-        messages.Unanswered;
-        trivia[currentQuestion].image;
-        unanswered ++ ;
+        // messages.Unanswered;
+        // trivia[currentQuestion].image;
+        // unanswered ++ ;
         // noAns().show;
         // correctAns().hide;
         // wrongAns().hide;
-        // console.log(Answer);
+        console.log('Answeranswer');
 
         renderQuestpage();
     }
-
+    console.log("clicked");
 });
 
 
@@ -214,13 +215,36 @@ function renderQuestpage() {
 
 }
 function correctAns() {
+    var correctMess = messages.Correct;
+    var p= $("<p>") ;
+    p.text(messages.Correct);
+    $("#message").append(p);
+    var i= $("<img>");
+    i.attr("src" , trivia[currentQuestion].image);
+    $("#gif").append(i);
+    correctAns++;
+
+
+
+    
+
+    console.log('correctcorrect')
+    // $("#correctAnswers")+
+    // correctAns().show;
+    // wrongAns().hide;
+    // noAns().hide;
+
+
+
+
+
+
     countDown();
     showCountdown();
-    correct = $("#correctAnswers");
-    corect++;
-    var correctMess = messages.Correct;
-    $("#correctAnswers").text(correct);
-    questImages;
+    // correct = $("#correctAnswers");
+    // correct++;
+    // $("#correctAnswers").text(correct);
+    // questImages;
 };
 
 function wrongAns() {
